@@ -1,0 +1,118 @@
+{
+    "visible": 9,
+    "songs": [
+        {
+            "name": "Elephant Gun",
+            "id": "elephant",
+            "img": "imgs/elephant.jpg",
+            "src": "PermEZ18IXg",
+            "color": "darkred"
+        },
+        {
+            "name": "Exile, Vilify",
+            "id": "exile",
+            "img": "imgs/exile.jpg",
+            "src": "G-Vg2YS-sFE",
+            "color": "plum"
+        },
+        {
+            "name": "Bad",
+            "id": "bad",
+            "img": "imgs/boy.jpg",
+            "src": "XzrqXsWugx0",
+            "color": "#1e1e1e"
+        },
+        {
+            "name": "Hurt",
+            "id": "hurt",
+            "img": "imgs/hurt.jpg",
+            "src": "3aF9AJm0RFc",
+            "color": "#1e1e1e"
+        },
+        {
+            "name": "Wild World",
+            "id": "wild",
+            "img": "imgs/wild.jpg",
+            "src": "y8pvXLVu8Yk",
+            "color": "white"
+        },
+        {
+            "name": "Song of Los",
+            "id": "los",
+            "img": "imgs/los.jpg",
+            "src": "kDyk8ouEfSQ",
+            "color": "#482a5a"
+        },
+        {
+            "name": "Hey",
+            "id": "hey",
+            "img": "imgs/hey.jpg",
+            "src": "v6xU96KLBL4",
+            "color": "sienna"
+        },
+        {
+            "name": "Afterlife",
+            "id": "after",
+            "img": "imgs/after.jpg",
+            "src": "r75BFcH4u2k",
+            "color": "white"
+        },
+        {
+            "name": "Funeral",
+            "id": "funeral",
+            "img": "imgs/funeral.jpg",
+            "src": "cMFWFhTFohk",
+            "color": "yellow"
+        },
+        {
+            "name": "I Need my Girl",
+            "id": "girl",
+            "img": "imgs/girl.jpg",
+            "src": "fSEPs3r1yMk",
+            "color": "black"
+        },
+        {
+            "name": "Ma Fleur",
+            "id": "fleur",
+            "img": "imgs/fleur.jpg",
+            "src": "mmlhCC2VAXo",
+            "color": "#a67800"
+        },
+        {
+            "name": "Holocene",
+            "id": "holocene",
+            "img": "imgs/emma.jpg",
+            "src": "MjxA25Tj1Ks",
+            "color": "black"
+        },
+        {
+            "name": "El Rey",
+            "id": "rey",
+            "img": "imgs/rey.jpg",
+            "src": "8Dv7LUImBsg",
+            "color": "darkred"
+        },
+        {
+            "name": "You and I",
+            "id": "youandi",
+            "img": "imgs/wilco.jpg",
+            "src": "USjuOWLyWIQ",
+            "color": "orange"
+        },
+        {
+            "name": "Ocean of Silence",
+            "id": "ocean",
+            "img": "imgs/neon.jpg",
+            "src": "CyN9_5LUSZY",
+            "color": "darkred"
+        },
+        {
+            "name": "Car Song",
+            "id": "car",
+            "img": "imgs/car.jpg",
+            "src": "85GUbsrt0ew",
+            "color": "orange"
+        }
+
+    ]
+}

@@ -1,0 +1,173 @@
+/***     Mario A. Dur�ntez    ***/
+/***   mdurantezs@gmail.com   ***/
+
+/* Estilo para www.chachinet.tk */
+
+/* Capas----    Superior: contenido
+                Media: overlay
+                Inferior: frame de youtube
+*/
+
+p {
+    font-family:Calibri;
+    font-size:20px;
+    color:#ee8800;
+}
+
+/**************** Imagen de fondo ****************/ 
+body {
+    background-size: 100%;
+    overflow: hidden;
+}
+body.lluvia {
+     background-image:url(imgs/_bg1.jpg);
+}
+body.sol {
+     background-image:url(imgs/_bg2.jpg);
+}
+body.noche {
+     background-image:url(imgs/_bg3.jpg);
+}
+/**************************************************/
+
+/************ Contenedor de youtube ***************/
+#ytbcnt {
+    position:fixed;
+    top:50%;
+    left:12%;
+    margin-top:-150px;
+    background-color: #1c0920;
+}
+#ytbfrm {
+    border: 2px inset #444;
+    background-image: url(imgs/_up.jpg);
+}
+/**************************************************/
+
+/********* Contenedor derecha y botones ***********/
+#contenedor {
+    position: fixed;
+    top:15%;
+    left:75%;
+    margin-left:-300px;
+    overflow: hidden;
+    z-index: 2;
+}
+.sng {      /*Div que contiene el bot�n de cada canci�n*/
+    position: absolute;
+    display: inline-block;
+    /* Posici�n determinada en scripts.js al cargar los elementos */
+    opacity: 0.4;
+    margin: 10px;
+    width: 120px;
+    height: 120px;
+    box-shadow: 5px 5px 5px #888;
+    transition: opacity 0.4s linear;
+}
+.sng:hover, .sng.activo {
+    opacity: 1;
+}
+.boton {
+    width: 120px;
+    height: 120px;
+}
+
+/**************************************************/
+
+/******************* Efectos **********************/
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  background-color: #1c0920;
+  opacity: 1.0;
+  transition: opacity 2s ease-in-out;
+}
+/**************************************************/
+
+/**************** Barra superior ******************/
+#header {
+    background-color: black;
+    opacity: 0.6;
+    position: absolute;
+    z-index: 5;
+    top: -25px;
+    left: 0px;
+    width: 100%;
+    height: 40px;
+    color: #ee8800;
+    transition: top 0.5s linear;
+}
+#header:hover {
+    top: 0px;
+}
+
+p.headelement {
+    font-family:Pristina;
+    font-size:15px;
+    color:#ee8800;
+    text-align:center;
+}
+
+.circulo {
+    border-radius: 100%;
+}
+
+.borde {
+    border: 4px double;
+}
+
+/**************************************************/
+
+/**************** Barra superior *** Dropdown *****/
+ul {
+    margin: 0px;
+    max-height:100%;
+    list-style: none;
+    display: inline-table;
+    position: relative;
+    text-align:center;
+}
+
+	nav ul:after {
+		content: ""; clear: both; display: block;
+	}
+
+ul ul {
+    display: none; /* Las listas dentro del header están ocultas, solo se ven los "titulos" de cada una*/
+}
+
+ul li:hover > ul { /* Listas visibles al pasar el raton (uso > para hacer target solo a los hijos directos */
+    display: block;
+}
+
+ul li {
+    float: left;
+    padding: 10px 0px;
+    width:110px;
+}
+    ul li:hover {
+        background: grey;
+        color:white;
+    }
+
+ul ul {
+    position:absolute;
+    top:100%;
+    padding-left: 0px;
+}
+    ul ul li {
+        border-top: 1px solid white;
+        background: grey;
+        padding: 10px 0px;
+        float: none;
+        position: relative;
+        width: 110px;
+    }
+        ul ul li:hover {
+            background: #000000;
+            color: white;
+        }
