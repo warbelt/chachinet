@@ -30,11 +30,11 @@ $.getJSON(jsonfile, function(data){
     width_ref = 0.55*w_width;
     /*******************************************************/
 
-    for (i = 0; i < data.visible; i++){                       //Añade celda
-        $("body").append("<div class='sng borde circulo' id='"+data.songs[i].id+"'> <img class='boton circulo' id='i"+data.songs[i].id+"' src='"+data.songs[i].img+"'> </div>");
-        $("#"+data.songs[i].id).css({'top': (~~(i/3)*160+height_ref)+'px', 'left': ((i%3)*150+width_ref)+'px'});
-        $("#"+data.songs[i].id).css('border-color', data.songs[i].color)   //cambia color del borde
-        $("#i"+data.songs[i].id).attr('onclick', 'if ( $(this).parent().hasClass("activo") != 1 ) { activarVideo("'+data.songs[i].src+'", $(this).parent().attr("id")) }'); //añade cambio de video al clicar
+    for (i = 0; i < 9; i++){                       //Añade celda
+        $("body").append("<div class='sng borde circulo' id='borde"+i+"'> <img class='boton circulo' id='img"+i+"' src='"+data.songs[i].img+"'> </div>");
+        $("#borde"+i).css({'top': (~~(i/3)*160+height_ref)+'px', 'left': ((i%3)*150+width_ref)+'px'});
+        $("#borde"+i).css('border-color', data.songs[i].color)   //cambia color del borde
+        $("#img"+i).attr('onclick', 'if ( $(this).parent().hasClass("activo") != 1 ) { activarVideo("'+data.songs[i].src+'", $(this).parent().attr("id")) }'); //añade cambio de video al clicar
     }
 
     $("#tabla > tbody").append("</tr>");            //cierra la ultima fila
@@ -149,5 +149,53 @@ function layout3() {        //Elipse
         var x = (w_width/2)-80+ejemayor*Math.cos(j*2*Math.PI/9);
         $(this).delay(j*100).animate({"left": x+'px', 'top': y+'px'}, 1000);
         j++;
+    });
+}
+
+/**********************************************************/
+/**********************************************************/
+// Navegación entre canciones
+
+var pagina = 0; //Set de elementos a cargar. Cada página tiene 9 elementos
+
+function anterior() {
+    if (pagina == 0) {return;}
+    pagina--;
+    cargaJSON();
+}
+
+function siguiente() {
+    pagina ++;
+    cargaJSON();
+}
+
+function cargaJSON() {
+    $.getJSON(jsonfile, function(data){
+        var inicio = pagina*9;
+        if (inicio >= data.visible) {
+            pagina--;
+            console.log(inicio);
+            console.log(data.visible);
+            console.log("error");
+            return;
+        }
+        
+        var cargadas = 0;
+        for (var i = inicio;  (i < data.visible) && (cargadas < 9) ; i++){                       //Añade celda
+            $("body").append("<div class='sng borde circulo oculto' id='temp_borde"+cargadas+"'> <img class='boton circulo' id='temp_img"+cargadas+"' src='"+data.songs[i].img+"'> </div>");
+            $("#temp_borde"+cargadas).css('border-color', data.songs[i].color)   //cambia color del borde
+            $("#temp_img"+cargadas).attr('onclick', 'if ( $(this).parent().hasClass("activo") != 1 ) { activarVideo("'+data.songs[i].src+'", $(this).parent().attr("id")) }'); //añade cambio de video al clicar
+            
+            $("#temp_borde"+cargadas).css({"top": $("#borde"+cargadas).css("top"), "left": $("#borde"+cargadas).css("left"), "visibility": "hidden"});
+            cargadas++;
+        }
+        
+        for (var animadas=0; animadas < cargadas; animadas++) {
+            $("#borde"+animadas).addClass("oculto").attr("id", "basura"+animadas);
+            setTimeout($("#basura"+animadas).remove(), 400);
+            $("#temp_borde"+animadas).attr("id", "borde"+animadas);
+            $("#temp_img"+animadas).attr("id", "img"+animadas);
+            $("#borde"+animadas).css("visibility", "visible").removeClass("oculto"); 
+        }
     });
 }

@@ -1,5 +1,5 @@
 {
-    "visible": 9,
+    "visible": 15,
     "songs": [
         {
             "name": "Elephant Gun",
@@ -23,18 +23,25 @@
             "color": "#1e1e1e"
         },
         {
-            "name": "Hurt",
-            "id": "hurt",
-            "img": "imgs/hurt.jpg",
-            "src": "3aF9AJm0RFc",
-            "color": "#1e1e1e"
-        },
-        {
             "name": "Wild World",
             "id": "wild",
             "img": "imgs/wild.jpg",
             "src": "y8pvXLVu8Yk",
             "color": "white"
+        },
+        {
+            "name": "You and I",
+            "id": "youandi",
+            "img": "imgs/wilco.jpg",
+            "src": "USjuOWLyWIQ",
+            "color": "orange"
+        },
+        {
+            "name": "Car Song",
+            "id": "car",
+            "img": "imgs/car.jpg",
+            "src": "85GUbsrt0ew",
+            "color": "orange"
         },
         {
             "name": "Song of Los",
@@ -48,7 +55,7 @@
             "id": "hey",
             "img": "imgs/hey.jpg",
             "src": "v6xU96KLBL4",
-            "color": "sienna"
+            "color": "#932f1d"
         },
         {
             "name": "Afterlife",
@@ -58,17 +65,10 @@
             "color": "white"
         },
         {
-            "name": "Funeral",
-            "id": "funeral",
-            "img": "imgs/funeral.jpg",
-            "src": "cMFWFhTFohk",
-            "color": "yellow"
-        },
-        {
             "name": "I Need my Girl",
             "id": "girl",
             "img": "imgs/girl.jpg",
-            "src": "fSEPs3r1yMk",
+            "src": "2_79sx6V3tU",
             "color": "black"
         },
         {
@@ -86,18 +86,18 @@
             "color": "black"
         },
         {
+            "name": "Funeral",
+            "id": "funeral",
+            "img": "imgs/funeral.jpg",
+            "src": "cMFWFhTFohk",
+            "color": "yellow"
+        },
+        {
             "name": "El Rey",
             "id": "rey",
             "img": "imgs/rey.jpg",
             "src": "8Dv7LUImBsg",
             "color": "darkred"
-        },
-        {
-            "name": "You and I",
-            "id": "youandi",
-            "img": "imgs/wilco.jpg",
-            "src": "USjuOWLyWIQ",
-            "color": "orange"
         },
         {
             "name": "Ocean of Silence",
@@ -107,12 +107,25 @@
             "color": "darkred"
         },
         {
-            "name": "Car Song",
-            "id": "car",
-            "img": "imgs/car.jpg",
-            "src": "85GUbsrt0ew",
-            "color": "orange"
+            "name": "Hurt",
+            "id": "hurt",
+            "img": "imgs/hurt.jpg",
+            "src": "3aF9AJm0RFc",
+            "color": "#1e1e1e"
+        },
+        {
+            "name": "Little Motel",
+            "id": "motel",
+            "img": "imgs/motel.jpg",
+            "src": "zqQTODR3kR8",
+            "color": "#db5604"
+        },
+        {
+            "name": "Have You Ever Seen the Rain",
+            "id": "rain",
+            "img": "imgs/rain.jpg",
+            "src": "Gu2pVPWGYMQ",
+            "color": "#c33ba8"
         }
-
     ]
 }
