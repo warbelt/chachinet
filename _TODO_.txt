@@ -22,6 +22,8 @@
     ···············································································
     (1.3)
     x cambio de canciones por páginas    
+    x limpiado .css
+    x nuevo .js con layouts mas escalable
 ···············································································
     arreglos
     - desactivar nieve del todo en vez de hacerla invisible
@@ -29,7 +31,7 @@
     - información etiquetas meta
     - comprimir json
     - posibilidad para que cargue más rapido: poner el fondo en onload(), para que la página y el js funcionen mientras se carga
-    - dividir js en varios archivos (uno para layouts, otro onload)
+
     - al cargar menos de nueve canciones, vaciar los espacios en vez de mantener las antiguas
 ···············································································
     features

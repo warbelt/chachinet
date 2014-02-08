@@ -1,19 +1,19 @@
-/***     Mario A. Dur�ntez    ***/
+/***     Mario A. Durantez    ***/
 /***   mdurantezs@gmail.com   ***/
-
 /* Estilo para www.chachinet.tk */
-
-/* Capas----    Superior: contenido
-                Media: overlay
-                Inferior: frame de youtube
-*/
 
 p {
     font-family:Calibri;
     font-size:20px;
     color:#ee8800;
 }
-
+p, img, div, li {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: -moz-none;
+    -o-user-select: none;
+    user-select: none;
+}
 /**************** Imagen de fondo ****************/ 
 body {
     background-size: 100%;
@@ -28,8 +28,10 @@ body.sol {
 body.noche {
      background-image:url(imgs/_bg3.jpg);
 }
+body.otono {
+     background-image:url(imgs/_bg4.jpg);
+}
 /**************************************************/
-
 /************ Contenedor de youtube ***************/
 #ytbcnt {
     position:fixed;
@@ -43,25 +45,13 @@ body.noche {
     background-image: url(imgs/_up.jpg);
 }
 /**************************************************/
-
-/********* Contenedor derecha y botones ***********/
-#contenedor {
-    position: fixed;
-    top:15%;
-    left:75%;
-    margin-left:-300px;
-    overflow: hidden;
-    z-index: 2;
-}
-.sng {      /*Div que contiene el bot�n de cada canci�n*/
+/**************** Esferas  canciones **************/
+.sng {
     position: absolute;
     display: inline-block;
-    /* Posici�n determinada en scripts.js al cargar los elementos */
     opacity: 0.4;
     margin: 10px;
-    width: 120px;
-    height: 120px;
-    box-shadow: 5px 5px 5px #888;
+    box-shadow: 3px 3px 3px #888;
     transition: opacity 0.4s linear;
 }
     .sng:hover, .sng.activo {
@@ -75,10 +65,15 @@ body.noche {
     width: 120px;
     height: 120px;
 }
+.esfera {
+    border-radius: 100%;
+}
+.borde {
+    border: 4px double;
+}
 
 /**************************************************/
-
-/******************* Efectos **********************/
+/******************* Overlay **********************/
 #overlay {
   position: fixed;
   top: 0;
@@ -91,7 +86,6 @@ body.noche {
   transition: opacity 2s ease-in-out;
 }
 /**************************************************/
-
 /**************** Barra superior ******************/
 #header {
     background-color: black;
@@ -105,9 +99,9 @@ body.noche {
     color: #ee8800;
     transition: top 0.5s linear;
 }
-#header:hover {
-    top: 0px;
-}
+    #header:hover {
+        top: 0px;
+    }
 
 p.headelement {
     font-family:Pristina;
@@ -116,16 +110,26 @@ p.headelement {
     text-align:center;
 }
 
-.circulo {
-    border-radius: 100%;
+#footer {
+    background-color: black;
+    opacity:0.6;
+    position: fixed;
+    z-index:5;
+    bottom: 0; 
+    left:0px;
+    height:24px;
+    width: 100%;
+    color: #ee8800;
 }
 
-.borde {
-    border: 4px double;
+.mediaButton {
+    float: right;
+    padding:2px 6px;
 }
-
+.mediaButton:hover, .mediaButton.activo {
+    background: grey;
+}
 /**************************************************/
-
 /**************** Barra superior *** Dropdown *****/
 ul {
     margin: 0px;
@@ -188,13 +192,3 @@ li#nombreNav:hover {
     background: black;
     color: #ee8800;
 }
-
-
-/* Arreglo para evitar que se seleccionen los elementos (funciona mal) 
-* {
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: -moz-none;
-    -o-user-select: none;
-    user-select: none;
-}*/

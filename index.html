@@ -1,56 +1,60 @@
 <!--     Mario A. Durantez     -->
 <!--   mdurantezs@gmail.com    -->
-
-<!--  www.chachinet.tk - v1.3  -->
+<!--  www.chachinet.tk - v1.3.1  -->
 
 <html>
-    <head>
-        <meta name="google-site-verification" content="u4Exdgszq2n819KYdDx_nkj02gC2I6HO56hdUSe71OI"/>
-        <title> Chachinet - Proximamente con red social </title>
-            <!-- Estilo & favicon -->
-        <link rel="stylesheet" href="style.css"> 
-        <link rel="icon" href="favicon3.ico">           
-            <!-- Scripts (javaScript & jQuery) -->
-        <script src="js/jquery-2.0.3.js"></script>       <!-- jQuery -->
-        <script src="js/scripts.js"></script>            <!-- Scripts originales -->
-        <script src="js/nieve.js"></script>              <!-- Nevada (scriptmania.com) -->
-    </head>
+<head>
+    <meta name="google-site-verification" content="u4Exdgszq2n819KYdDx_nkj02gC2I6HO56hdUSe71OI"/>
+    <title> Chachinet - Proximamente con red social </title>
+        <!-- Estilo & favicon -->
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="icon" href="favicon3.ico">           
+        <!-- Scripts (javaScript & jQuery) -->
+    <script src="js/jquery-2.0.3.js"></script>      <!-- jQuery -->
+    <script src="js/nieve.js"></script>             <!-- Nevada (scriptmania.com) -->
+    
+    <script src="js/scripts.js"></script>           <!-- Scripts originales -->
+    <script src="js/layouts.js"></script>           <!-- Layouts -->
+</head>
 
-    <body class="lluvia">
-        <div id="overlay">
-        </div>
+<body class="lluvia">
+    <div id="overlay">
+    </div>
 
-        <div id="header">
-            <ul>
-                <li>Vistas
-                   <ul>
-                        <li onclick="layout0()">1</li>
-                        <li onclick="layout1()">2</li>
-                        <li onclick="layout2()">3</li>
-                        <li onclick="layout3()">4</li>
-                    </ul>
-                </li>
-                <li>Nieve
-                    <ul>
-                        <li onclick="for (i=0;i<=snowmax;i++) {snow[i].style.visibility='visible'; document.getElementById('s'+i).innerHTML='*'}">Normal</li>
-                        <li onclick="for (i=0;i<=snowmax;i++) {snow[i].style.visibility='visible'; document.getElementById('s'+i).innerHTML='moco'}">Mocos</li>
-                        <li onclick="for (i=0;i<=snowmax;i++) {snow[i].style.visibility='hidden'}">No</li>
-                    </ul>
-                </li>
-                <li id="liFondo" onclick="rotarFondo()">Solecillo</li>
-            </ul>
-             <ul id=navegar>
-                <li class="flechaNav" onclick="anterior()">&lt;</li>
-                <li id="nombreNav">Canciones</li>
-                <li class="flechaNav" onclick="siguiente()">&gt;</li>
-            </ul> 
-        </div>
+    <div id="header">
+        <ul>
+            <li>Vistas
+                <ul id="vistas">
+                    <!-- carga lista desde jayouts.js -->
+                </ul>
+            </li>
+            <li>Nieve
+                <ul>
+                    <li onclick="for (i=0;i<=snowmax;i++) {snow[i].style.visibility='visible'; document.getElementById('s'+i).innerHTML='*'}; $('#mocos').css('visibility', 'visible')">Si</li>
+                    <!--li onclick="for (i=0;i<=snowmax;i++) {snow[i].style.visibility='visible'; document.getElementById('s'+i).innerHTML='moco'}">Mocos</li-->
+                    <li onclick="for (i=0;i<=snowmax;i++) {snow[i].style.visibility='hidden'}; $('#mocos').css('visibility', 'hidden')">No</li>
+                </ul>
+            </li>
+            <li id="liFondo" onclick="rotarFondo()">Solecillo</li>
+            <li id="mocos" style="visibility: hidden; width: 250px" onclick="for (i=0;i<=snowmax;i++) {document.getElementById('s'+i).innerHTML='moco'}">Haz que lluevan mocos!</li>
+        </ul>
+        <ul id=navegar>
+            <li class="flechaNav" onclick="anterior()">&lt;</li>
+            <li id="nombreNav">Canciones</li>
+            <li class="flechaNav" onclick="siguiente()">&gt;</li>
+        </ul>
+    </div>
 
-        <div id="ytbcnt">
-            <iframe id="ytbfrm" width="420" height="315" src="" frameborder="1"></iframe>
-        </div>
+    <div id="ytbcnt">
+        <iframe id="ytbfrm" width="420" height="315" src="" frameborder="1"></iframe>
+    </div>
 
-        <img id='preload' src='imgs/_bg2.jpg' style='height:0px; width: 1px; top:-999px; z-index:-9'>
-        <img id='preload2' src='imgs/_bg3.jpg' style='height:0px; width: 1px; top:-998px; z-index:-9'>
-    </body>
+    <!--div id="footer">
+        <div class="mediaButton" id="repetir" onclick="repetir()"><img src="media/repetir20x20.png"></div>
+        <div class="mediaButton" id="aleatorio" onclick="aleatorio()"><img src="media/aleatorio20x20.png"></div>
+    </div-->
+    
+    <img id='preload' src='imgs/_bg2.jpg' style='height:0px; width: 1px; top:-999px; z-index:-9'>
+    <img id='preload2' src='imgs/_bg3.jpg' style='height:0px; width: 1px; top:-998px; z-index:-9'>
+</body>
 </html>
