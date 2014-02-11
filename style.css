@@ -57,8 +57,9 @@ body.otono {
     .sng:hover, .sng.activo {
         opacity:1;
     }
-    .sng.oculto {
+    .sng.basura, sng.oculto {
         opacity:0;
+        transition: opacity 0.4s linear;
     }
 
 .boton {
@@ -126,7 +127,7 @@ p.headelement {
     float: right;
     padding:2px 6px;
 }
-.mediaButton:hover, .mediaButton.activo {
+.mediaButton:hover, .mediaButton.on {
     background: grey;
 }
 /**************************************************/
