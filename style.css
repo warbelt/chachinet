@@ -57,7 +57,7 @@ body.otono {
     .sng:hover, .sng.activo {
         opacity:1;
     }
-    .sng.basura, sng.oculto {
+    .sng.basura, .sng.oculto {
         opacity:0;
         transition: opacity 0.4s linear;
     }
