@@ -33,7 +33,7 @@ var snowingzone=1
 // CONFIGURATION ENDS HERE
 ///////////////////////////////////////////////////////////////////////////
 
-
+var nieveActiva = false;
 // Do not edit below this line
 var snow=new Array()
 var marginbottom
@@ -105,12 +105,33 @@ function movesnow() {
                         snow[i].posy=0
                 }
         }
-        var timer=setTimeout("movesnow()",50)
+        if (nieveActiva == true) {
+            var timer=setTimeout("movesnow()",50)
+        }
 }
 
 for (i=0;i<=snowmax;i++) {
         document.write("<span id='s"+i+"' style='position:absolute;top:-"+snowmaxsize+"'>"+snowletter+"</span>")
 }
+
 if (browserok) {
         window.onload=initsnow
+}
+        
+function activaNieve() {
+    for (i=0;i<=snowmax;i++) {
+        snow[i].style.visibility='visible';
+    }
+    nieveActiva = true;
+    $('#mocos').css('visibility', 'visible');
+    
+    movesnow();
+}
+
+function desactivaNieve() {
+    for (i=0;i<=snowmax;i++) {
+        snow[i].style.visibility='hidden';
+    } 
+    nieveActiva = false;
+    $('#mocos').css('visibility', 'hidden');
 }
