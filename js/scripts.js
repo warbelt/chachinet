@@ -22,6 +22,8 @@ var canciones;  //Numero total de canciones incluidas en el json
 var pagina = 0; //Set de elementos a cargar. Cada página tiene 9 elementos
 var ytbActivado = false; //boolean, 0 si no se ha activado aun el reproductor flash
 var player; //referencia al reproductor, inicializado en onYouTubePlayerReady()
+var randomQueue = [];
+var randomQueueMaxSize = 10;
 /**********************************************************/
 /**********************************************************/
 //  Carga elementos de la tabla desde archivo JSON
@@ -209,12 +211,17 @@ function aleatorio() {
 }
 
 function playRandom() {
-    //elige una cancion al azar que no este activa
+    //elige una cancion al azar que no este activa ni en la lista de recientes
     var aleatorio; 
     do {
         aleatorio = Math.floor(Math.random() * canciones);
-    } while ($("#borde"+aleatorio).hasClass("activo"))
-    console.log(aleatorio);
+    } while ($("#borde"+aleatorio).hasClass("activo") || (randomQueue.indexOf(aleatorio) != -1));
+    
+    randomQueue.push(aleatorio);
+    if (randomQueue.length > randomQueueMaxSize) {
+        randomQueue.shift();
+    }
+    
     var paginaAleatorio = Math.floor(aleatorio/9);
     if (paginaAleatorio != pagina)
     {
@@ -224,10 +231,7 @@ function playRandom() {
     }
     
     numID = aleatorio-(pagina*9)
-    console.log(numID);
     setTimeout(function(){
-        console.log($("#img"+numID).attr("data-videoID"));
-        console.log("borde"+numID);
         activarVideo($("#img"+numID).attr("data-videoID"), "borde"+numID);
     }, 2000);
 }
