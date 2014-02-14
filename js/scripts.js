@@ -236,7 +236,7 @@ function playRandom() {
     
     numID = aleatorio-(pagina*9)
     setTimeout(function(){
-        activarVideo($("#img"+numID).attr("data-videoID"), "borde"+numID);
+        activarVideo($("#borde"+numID).attr("data-videoID"), "borde"+numID);
     }, 2000);
 }
 
