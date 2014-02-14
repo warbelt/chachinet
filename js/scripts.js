@@ -21,17 +21,19 @@ var jsonfile = "items.json";
 var canciones;  //Numero total de canciones incluidas en el json
 var pagina = 0; //Set de elementos a cargar. Cada página tiene 9 elementos
 var ytbActivado = false; //boolean, 0 si no se ha activado aun el reproductor flash
+var itemsUnlocked = false; 
 var player; //referencia al reproductor, inicializado en onYouTubePlayerReady()
 var randomQueue = [];
 var randomQueueMaxSize = 10;
+var w_height = $(document).height();
+var w_width = $(document).width();
 /**********************************************************/
 /**********************************************************/
 //  Carga elementos de la tabla desde archivo JSON
 
 $.getJSON(jsonfile, function(data){
     var i;
-    var w_height = $(document).height();
-    var w_width = $(document).width();
+
     canciones = data.visible;
     /* Estas variables definen la posición de las esferas */
     height_ref = 0.15*w_height;
@@ -39,10 +41,10 @@ $.getJSON(jsonfile, function(data){
     /*******************************************************/
 
     for (i = 0; i < 9; i++){                       //Añade celda
-        $("body").append("<div class='sng borde boton esfera' id='borde"+i+"'> <img class='boton esfera' id='img"+i+"' src='"+data.songs[i].img+"' data-videoID="+data.songs[i].src+"> </div>");
+        $("body").append("<div class='sng borde boton esfera' id='borde"+i+"' data-videoID="+data.songs[i].src+"> <img class='boton esfera' id='img"+i+"' src='"+data.songs[i].img+"'> </div>");
         $("#borde"+i).css({'top': (~~(i/3)*160+height_ref)+'px', 'left': ((i%3)*150+width_ref)+'px'});
         $("#borde"+i).css('border-color', data.songs[i].color)   //cambia color del borde
-        $("#img"+i).attr('onclick', 'if ( $(this).parent().hasClass("activo") != 1 ) { activarVideo($(this).attr("data-videoID"), $(this).parent().attr("id")) }'); //añade cambio de video al clicar
+        $("#borde"+i).attr('onclick', 'if ( $(this).hasClass("activo") != 1 ) { activarVideo($(this).attr("data-videoID"), $(this).attr("id")) }'); //añade cambio de video al clicar
     }
 });
 
@@ -125,6 +127,8 @@ function cargaPagina() {
     }
     
     setSpheres(cargadas);
+    
+    if (itemsUnlocked == true) { unlock(); }
 }
 
 function loadSpheres(start, quantity, url) {
@@ -140,9 +144,9 @@ function loadSpheres(start, quantity, url) {
             }
 
             for (var i = start;  (i < data.visible) && (cargadas < 9) ; i++){
-                $("body").append("<div class='sng borde boton esfera oculto' id='temp_borde"+cargadas+"'> <img class='boton esfera' id='temp_img"+cargadas+"' src='"+data.songs[i].img+"' data-videoID="+data.songs[i].src+"> </div>");
+                $("body").append("<div class='sng borde boton esfera oculto' id='temp_borde"+cargadas+"'  data-videoID="+data.songs[i].src+"> <img class='boton esfera' id='temp_img"+cargadas+"' src='"+data.songs[i].img+"'> </div>");
                 $("#temp_borde"+cargadas).css({"border-color": data.songs[i].color, "visibility": "hidden"})   //cambia color del borde
-                $("#temp_img"+cargadas).attr('onclick', 'if ( $(this).parent().hasClass("activo") != 1 ) { activarVideo($(this).attr("data-videoID"), $(this).parent().attr("id")) }'); //añade cambio de video al clicar
+                $("#temp_borde"+cargadas).attr('onclick', 'if ( $(this).hasClass("activo") != 1 ) { activarVideo($(this).attr("data-videoID"), $(this).attr("id")) }'); //añade cambio de video al clicar
                 cargadas++;
             }
         }
@@ -234,4 +238,32 @@ function playRandom() {
     setTimeout(function(){
         activarVideo($("#img"+numID).attr("data-videoID"), "borde"+numID);
     }, 2000);
+}
+
+
+
+function unlock() {
+    $("#dragLock > img").attr("src", "media/unlocked20x20.png");
+    $("#dragLock").attr("onclick", "lock()").addClass("on");
+    
+    $(".sng").each(function() {
+        $(this).attr("onclick", "").draggable({disabled: false}).draggable({containment: "document"});
+        $("#ytbplayer").draggable({disabled: false}).draggable({containment: "document"});
+        $("#ytbcnt").draggable({disabled: false}).css("z-index", "-1");
+    });
+    
+    itemsUnlocked = true;
+}
+
+function lock() {
+    $("#dragLock > img").attr("src", "media/locked20x20.png");
+    $("#dragLock").attr("onclick", "unlock()").removeClass("on");
+    
+    $(".sng").each(function() {
+        $(this).attr("onclick", "if ( $(this).hasClass('activo') != 1 ) { activarVideo($(this).attr('data-videoID'), $(this).attr('id')) }").draggable({ disabled: true });
+        $("#ytbplayer").draggable({ disabled: true });
+        $("#ytbcnt").draggable({ disabled: true }).css("z-index", "auto");
+    });
+    
+    itemsUnlocked = false;
 }
