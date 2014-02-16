@@ -31,26 +31,11 @@ var w_width = $(document).width();
 /**********************************************************/
 //  Carga elementos de la tabla desde archivo JSON
 
-$.getJSON(jsonfile, function(data){
-    var i;
-
-    canciones = data.visible;
-    /* Estas variables definen la posición de las esferas */
-    height_ref = 0.15*w_height;
-    width_ref = 0.55*w_width;
-    /*******************************************************/
-
-    for (i = 0; i < 9; i++){                       //Añade celda
-        $("body").append("<div class='sng borde boton esfera' id='borde"+i+"' data-videoID="+data.songs[i].src+"> <img class='boton esfera' id='img"+i+"' src='"+data.songs[i].img+"'> </div>");
-        $("#borde"+i).css({'top': (~~(i/3)*160+height_ref)+'px', 'left': ((i%3)*150+width_ref)+'px'});
-        $("#borde"+i).css('border-color', data.songs[i].color)   //cambia color del borde
-        $("#borde"+i).attr('onclick', 'if ( $(this).hasClass("activo") != 1 ) { activarVideo($(this).attr("data-videoID"), $(this).attr("id")) }'); //añade cambio de video al clicar
-    }
+$(document).ready(function() {
+    var cargadas = loadSpheres(0, 9, jsonfile);
+    setSpheres(cargadas);
+    layout0(false);
 });
-
-/**********************************************************/
-/**********************************************************/
-// Al clicar cada imagen se queda resaltada y se cambia el video
 
 /**********************************************************/
 /**********************************************************/
@@ -138,12 +123,14 @@ function loadSpheres(start, quantity, url) {
         dataType: 'json',
         async: false,
         success: function(data) {
-            if (start >= data.visible){
+            canciones = data.visible;
+            
+            if (start >= canciones){
                 console.log("index "+start+" does not exist");
                 return;
             }
 
-            for (var i = start;  (i < data.visible) && (cargadas < 9) ; i++){
+            for (var i = start;  (i < canciones) && (cargadas < 9) ; i++){
                 $("body").append("<div class='sng borde boton esfera oculto' id='temp_borde"+cargadas+"'  data-videoID="+data.songs[i].src+"> <img class='boton esfera' id='temp_img"+cargadas+"' src='"+data.songs[i].img+"'> </div>");
                 $("#temp_borde"+cargadas).css({"border-color": data.songs[i].color, "visibility": "hidden"})   //cambia color del borde
                 $("#temp_borde"+cargadas).attr('onclick', 'if ( $(this).hasClass("activo") != 1 ) { activarVideo($(this).attr("data-videoID"), $(this).attr("id")) }'); //añade cambio de video al clicar
@@ -247,7 +234,7 @@ function unlock() {
     $("#dragLock").attr("onclick", "lock()").addClass("on");
     
     $(".sng").each(function() {
-        $(this).attr("onclick", "").draggable({disabled: false}).draggable({containment: "document"});
+        $(this).attr("onclick", "").addClass("unlocked").draggable({disabled: false}).draggable({containment: "document"});
         $("#ytbplayer").draggable({disabled: false}).draggable({containment: "document"});
         $("#ytbcnt").draggable({disabled: false}).css("z-index", "-1");
     });
@@ -260,7 +247,7 @@ function lock() {
     $("#dragLock").attr("onclick", "unlock()").removeClass("on");
     
     $(".sng").each(function() {
-        $(this).attr("onclick", "if ( $(this).hasClass('activo') != 1 ) { activarVideo($(this).attr('data-videoID'), $(this).attr('id')) }").draggable({ disabled: true });
+        $(this).attr("onclick", "if ( $(this).hasClass('activo') != 1 ) { activarVideo($(this).attr('data-videoID'), $(this).attr('id')) }").removeClass("unlocked").draggable({ disabled: true });
         $("#ytbplayer").draggable({ disabled: true });
         $("#ytbcnt").draggable({ disabled: true }).css("z-index", "auto");
     });

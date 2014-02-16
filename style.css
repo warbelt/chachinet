@@ -54,7 +54,7 @@ body.otono {
     box-shadow: 3px 3px 3px #888;
     transition: opacity 0.4s linear;
 }
-    .sng:hover, .sng.activo {
+    .sng:hover, .sng.activo, .sng.unlocked {
         opacity:1;
     }
     .sng.basura, .sng.oculto {
