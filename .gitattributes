@@ -1,0 +1,12 @@
+# These files are text and should be normalized (convert crlf => lf)
+*.html    text
+*.json    text
+*.css     text
+*.js      text
+
+# Images should be treated as binary
+# (binary is a macro for -text -diff)
+*.png     binary
+*.jpeg    binary
+*.jpg     binary
+*.ico     binary
