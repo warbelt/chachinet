@@ -68,23 +68,22 @@ function rotarFondo(){
 // Efecto de fundido al entrar y cambiar de estación
 
 function flash(color, time) {
-    var opacidad = 'opacity '+time/1000+'s ease-in-out'
     $('#overlay').css({
         'visibility': 'visible',
         'opacity': '0.0',
         'background-color': color,
-        'transition': opacidad
+        'transition': 'opacity '+time/1000+'s ease-in-out'
     });
 
     setTimeout(function(){
         $('#overlay').css({
             'visibility': 'hidden',
             'opacity': '1.0'
-        })}, time)
+        })}, time + 200)
 }
 
 $(window).load(function () {
-    flash('#1c0920', 2000);
+    flash('#1c0920', 1500);
 });
 
 /**********************************************************/
