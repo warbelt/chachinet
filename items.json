@@ -1,128 +1,128 @@
 {
-    "visible": 17,
+    "visible": 18,
     "songs": [
         {
             "name": "Elephant Gun",
-            "id": "elephant",
+            "artist": "Beirut",
             "img": "imgs/elephant.jpg",
             "src": "PermEZ18IXg",
             "color": "darkred"
         },
         {
             "name": "Exile, Vilify",
-            "id": "exile",
+            "artist": "The National",
             "img": "imgs/exile.jpg",
             "src": "G-Vg2YS-sFE",
             "color": "plum"
         },
         {
             "name": "Bad",
-            "id": "bad",
+            "artirt": "U2",
             "img": "imgs/boy.jpg",
             "src": "XzrqXsWugx0",
             "color": "#1e1e1e"
         },
         {
             "name": "Wild World",
-            "id": "wild",
+            "artirt": "Cat Stevens",
             "img": "imgs/wild.jpg",
             "src": "y8pvXLVu8Yk",
             "color": "white"
         },
         {
             "name": "You and I",
-            "id": "youandi",
+            "artirt": "Wilco",
             "img": "imgs/wilco.jpg",
             "src": "USjuOWLyWIQ",
             "color": "orange"
         },
         {
             "name": "Car Song",
-            "id": "car",
+            "artirt": "Woodie Guthrie",
             "img": "imgs/car.jpg",
             "src": "85GUbsrt0ew",
             "color": "orange"
         },
         {
             "name": "Song of Los",
-            "id": "los",
+            "artirt": "Apparat",
             "img": "imgs/los.jpg",
             "src": "kDyk8ouEfSQ",
             "color": "#482a5a"
         },
         {
             "name": "Hey",
-            "id": "hey",
+            "artirt": "Pixies",
             "img": "imgs/hey.jpg",
             "src": "v6xU96KLBL4",
             "color": "#932f1d"
         },
         {
             "name": "Afterlife",
-            "id": "after",
+            "artirt": "Arcade Fire",
             "img": "imgs/after.jpg",
             "src": "r75BFcH4u2k",
             "color": "white"
         },
         {
             "name": "I Need my Girl",
-            "id": "girl",
+            "artirt": "The National",
             "img": "imgs/girl.jpg",
             "src": "2_79sx6V3tU",
             "color": "black"
         },
         {
             "name": "Ma Fleur",
-            "id": "fleur",
+            "artirt": "The Cinematic Orchestra",
             "img": "imgs/fleur.jpg",
             "src": "mmlhCC2VAXo",
             "color": "#a67800"
         },
         {
             "name": "Holocene",
-            "id": "holocene",
+            "artirt": "Bon Iver",
             "img": "imgs/emma.jpg",
             "src": "MjxA25Tj1Ks",
             "color": "black"
         },
         {
             "name": "Funeral",
-            "id": "funeral",
+            "artirt": "Band of Horses",
             "img": "imgs/funeral.jpg",
             "src": "cMFWFhTFohk",
             "color": "yellow"
         },
         {
             "name": "El Rey",
-            "id": "rey",
+            "artirt": "Coque Malla",
             "img": "imgs/rey.jpg",
             "src": "8Dv7LUImBsg",
             "color": "darkred"
         },
         {
-            "name": "Ocean of Silence",
-            "id": "ocean",
+            "name": "Ocean of Noise",
+            "artirt": "Arcade Fire",
             "img": "imgs/neon.jpg",
             "src": "CyN9_5LUSZY",
             "color": "darkred"
         },
         {
             "name": "Hurt",
-            "id": "hurt",
+            "artirt": "Johnny Cash",
             "img": "imgs/hurt.jpg",
             "src": "3aF9AJm0RFc",
             "color": "#1e1e1e"
         },
         {
             "name": "Little Motel",
-            "id": "motel",
+            "artirt": "Modest Mouse",
             "img": "imgs/motel.jpg",
             "src": "zqQTODR3kR8",
             "color": "#db5604"
         },
         {
             "name": "Have You Ever Seen the Rain",
-            "id": "rain",
+            "artirt": "Creedence clearwater Revival",
             "img": "imgs/rain.jpg",
             "src": "Gu2pVPWGYMQ",
             "color": "#c33ba8"

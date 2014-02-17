@@ -30,66 +30,17 @@ var w_height = $(document).height();
 var w_width = $(document).width();
 /**********************************************************/
 /**********************************************************/
-//  Carga elementos de la tabla desde archivo JSON
+// Carga inicial desde JSON
 
 $(document).ready(function() {
-    var cargadas = loadSpheres(0, 9, jsonfile);
-    setSpheres(cargadas);
+    var loaded = loadSpheres(0, 9, jsonfile);
+    setSpheres(loaded);
     layout0(false);
 });
 
 /**********************************************************/
 /**********************************************************/
-// Rotación entre los fondos
-
-function rotarFondo(){
-    if ($("#liFondo").text()=="Solecillo") {
-        $("#liFondo").text("Noche");
-        flash('#1d7471', 1000);
-        $("body").toggleClass("lluvia");
-        $("body").toggleClass("sol");
-    }
-    else if ($("#liFondo").text()=="Noche") {
-        $("#liFondo").text("Lluvia");
-        flash('#a76c1d', 1000);
-        $("body").toggleClass("sol");
-        $("body").toggleClass("noche");
-    }
-    else if ($("#liFondo").text()=="Lluvia") {
-        $("#liFondo").text("Solecillo");
-        flash('#1c0920', 1000);
-        $("body").toggleClass("noche");
-        $("body").toggleClass("lluvia");
-    }
-    
-}
-
-/**********************************************************/
-/**********************************************************/
-// Efecto de fundido al entrar y cambiar de estación
-
-function flash(color, time) {
-    $('#overlay').css({
-        'visibility': 'visible',
-        'opacity': '0.0',
-        'background-color': color,
-        'transition': 'opacity '+time/1000+'s ease-in-out'
-    });
-
-    setTimeout(function(){
-        $('#overlay').css({
-            'visibility': 'hidden',
-            'opacity': '1.0'
-        })}, time + 200)
-}
-
-$(window).load(function () {
-    flash('#1c0920', 1500);
-});
-
-/**********************************************************/
-/**********************************************************/
-// Navegación entre canciones
+// Navegación entre items del .json
 
 function anterior() {
     if (pagina == 0) {return;}
@@ -115,6 +66,10 @@ function cargaPagina() {
     
     if (itemsUnlocked == true) { unlock(); }
 }
+
+/**********************************************************/
+/**********************************************************/
+// Carga y manipulación de esferas
 
 function loadSpheres(start, quantity, url) {
     var cargadas = 0;
@@ -154,82 +109,6 @@ function setSpheres(cargadas) {
         }
     setTimeout(function(){$(".basura").each(function(){$(this).remove()})}, 400);
 }
-
-/**********************************************************/
-/**********************************************************/
-// Controles de reproductor
-
-function activarYtb(videoID) {
-    var params = { allowScriptAccess: "always" };
-    var atts = { id: "ytbplayer" };
-    swfobject.embedSWF("http://www.youtube.com/v/"+videoID+"?enablejsapi=1&playerapiid=ytbplayer&autoplay=1&rel=0", "ytbfrm", "420", "315", "8", null, null, params, atts);
-}
-
-function onYouTubePlayerReady(playerId) {
-    player = document.getElementById("ytbplayer");
-    player.addEventListener("onStateChange", "ytbCambioEstado");
-    ytbActivado=true;
-}
-
-function ytbCambioEstado(estado) {
-    //finaliza video -> repetir
-    if ((estado == 0) && ($("#repetir").hasClass("on"))) {
-        player.playVideo();
-    }
-    
-    if ((estado == 0) && ($("#aleatorio").hasClass("on"))) {
-        playRandom();
-    }
-}
-
-function activarVideo(videoId, esferaId) {
-    if (ytbActivado == false) {
-        activarYtb(videoId);
-    }
-    else {
-        player.loadVideoById(videoId);
-    }
-    
-    videoIdActivo = videoId;
-    $(".sng").removeClass('activo');
-    $("#"+esferaId).addClass('activo');
-}
-
-function repetir() {
-    $("#repetir").toggleClass("on");
-    $("#aleatorio").removeClass("on");
-}
-function aleatorio() {
-    $("#aleatorio").toggleClass("on");
-    $("#repetir").removeClass("on");
-}
-
-function playRandom() {
-    //elige una cancion al azar que no este activa ni en la lista de recientes
-    var aleatorio; 
-    do {
-        aleatorio = Math.floor(Math.random() * canciones);
-    } while ($("#borde"+aleatorio).hasClass("activo") || (randomQueue.indexOf(aleatorio) != -1));
-    
-    randomQueue.push(aleatorio);
-    if (randomQueue.length > randomQueueMaxSize) {
-        randomQueue.shift();
-    }
-    
-    var paginaAleatorio = Math.floor(aleatorio/9);
-    if (paginaAleatorio != pagina)
-    {
-        pagina = paginaAleatorio;
-        cargaPagina();
-    }
-    
-    numID = aleatorio-(pagina*9)
-    setTimeout(function(){
-        activarVideo($("#borde"+numID).attr("data-videoID"), "borde"+numID);
-    }, 2000);
-}
-
-
 
 function unlock() {
     $("#dragLock > img").attr("src", "media/unlocked20x20.png");

@@ -12,10 +12,10 @@
                     // animate: boolean, con valor true, las esferas se colocan con una animación, 
                                         //con valor false se posicionan directamente con css
 
-var cantidadLayouts = 4     //Número total de vistas posibles
+var numeLayouts = 4     //Número total de vistas posibles
 
 $(function cargaLayouts() {
-    for (var cargados = 0; cargados < cantidadLayouts; cargados++) {
+    for (var cargados = 0; cargados < numLayouts; cargados++) {
         $("#vistas").append("<li onclick='layout"+cargados+"(true)'>"+(cargados+1)+"</li>");
     }
 });
