@@ -23,6 +23,7 @@ var pagina = 0; //Set de elementos a cargar. Cada página tiene 9 elementos
 var ytbActivado = false; //boolean, 0 si no se ha activado aun el reproductor flash
 var itemsUnlocked = false; 
 var player; //referencia al reproductor, inicializado en onYouTubePlayerReady()
+var videoIdActivo = "";
 var randomQueue = [];
 var randomQueueMaxSize = 10;
 var w_height = $(document).height();
@@ -130,9 +131,12 @@ function loadSpheres(start, quantity, url) {
             }
 
             for (var i = start;  (i < canciones) && (cargadas < 9) ; i++){
-                $("body").append("<div class='sng borde boton esfera oculto' id='temp_borde"+cargadas+"'  data-videoID="+data.songs[i].src+"> <img class='boton esfera' id='temp_img"+cargadas+"' src='"+data.songs[i].img+"'> </div>");
+                $("body").append("<div class='sng borde boton esfera oculto' id='temp_borde"+cargadas+"' data-videoID="+data.songs[i].src+"> <img class='boton esfera' id='temp_img"+cargadas+"' src='"+data.songs[i].img+"'> </div>");
                 $("#temp_borde"+cargadas).css({"border-color": data.songs[i].color, "visibility": "hidden"})   //cambia color del borde
                 $("#temp_borde"+cargadas).attr('onclick', 'if ( $(this).hasClass("activo") != 1 ) { activarVideo($(this).attr("data-videoID"), $(this).attr("id")) }'); //añade cambio de video al clicar
+                if ($("#temp_borde"+cargadas).attr("data-videoID") == videoIdActivo) {
+                    $("#temp_borde"+cargadas).addClass("activo");
+                }
                 cargadas++;
             }
         }
@@ -165,7 +169,6 @@ function onYouTubePlayerReady(playerId) {
     player = document.getElementById("ytbplayer");
     player.addEventListener("onStateChange", "ytbCambioEstado");
     ytbActivado=true;
-    console.log("activado reproductor");
 }
 
 function ytbCambioEstado(estado) {
@@ -179,16 +182,17 @@ function ytbCambioEstado(estado) {
     }
 }
 
-function activarVideo(src, id) {
+function activarVideo(videoId, esferaId) {
     if (ytbActivado == false) {
-        activarYtb(src);
+        activarYtb(videoId);
     }
     else {
-        player.loadVideoById(src);
+        player.loadVideoById(videoId);
     }
     
+    videoIdActivo = videoId;
     $(".sng").removeClass('activo');
-    $("#"+id).addClass('activo');
+    $("#"+esferaId).addClass('activo');
 }
 
 function repetir() {
@@ -217,7 +221,6 @@ function playRandom() {
     {
         pagina = paginaAleatorio;
         cargaPagina();
-        console.log("y carga pagina"+pagina)
     }
     
     numID = aleatorio-(pagina*9)
