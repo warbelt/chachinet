@@ -1,6 +1,6 @@
 <!--     Mario A. Durantez     -->
 <!--   mdurantezs@gmail.com    -->
-<!--  www.chachinet.tk - v1.5.1  -->
+<!--  www.chachinet.tk - v1.5.3  -->
 
 <html lang="spanish">
 <head>
@@ -31,7 +31,7 @@
     
         <!-- Estilo & favicon -->
     <link rel="stylesheet" href="style.css"> 
-    <link rel="icon" href="favicon3.ico">           
+    <link rel="icon" href="media/favicon.ico">           
         <!-- Scripts (javaScript & jQuery) -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>     <!-- jQuery -->
     <script src="js/jquery-ui-1.10.4.custom.min.js"></script>                   <!-- jQuery UI (draggable) -->
@@ -75,6 +75,7 @@
     </div>
 
     <div id="footer">
+        <div class="mediaButton" id="contacto" onclick="contacto()" style="float:left"><img src="media/about20x20.png"></div>
         <div class="mediaButton" id="repetir" onclick="repetir()"><img src="media/repetir20x20.png"></div>
         <div class="mediaButton" id="aleatorio" onclick="aleatorio()"><img src="media/aleatorio20x20.png"></div>
         <div class="mediaButton" id="dragLock" onclick="unlock()"><img src="media/locked20x20.png"></div>
@@ -82,5 +83,19 @@
     
     <img id='preload' src='imgs/_bg2.jpg' style='height:0px; width: 1px; top:-999px; z-index:-9'>
     <img id='preload2' src='imgs/_bg3.jpg' style='height:0px; width: 1px; top:-998px; z-index:-9'>
+    
+    <div id='popContacto'>
+        <table id='tablaContacto'><tr>
+            <th><img src='media/favicon_white.ico'></th>
+            <th><p>Chachinet son:</p></th>
+            <th colspan='2'><p>Carmen Domínguez<br> <br>Mario Durántez</p></th>
+        </tr><tr>
+            <td><a href='mailto:mdurantezs@gmail.com'><img src='media/mailicon.png'><p>mdurantezs<br>@gmail.com</p></td>
+            <td><a target='_blank' href='http://www.github.com/warbelt/chachinet'><img src='media/GHicon.png'><br><p>GitHub</p></a></td>
+            <td><a target='_blank' href='http://www.jquery.com'><img src='media/JQicon.png'><p>Powered by<br>jQuery</p></a></td>
+            <td><a target='blank' href='http://www.visualpharm.com'><p>Algunos iconos cedidos por VisualPharm</p></a></td></tr>
+        </table>
+    </div>
+    
 </body>
 </html>

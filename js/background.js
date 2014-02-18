@@ -52,3 +52,29 @@ function flash(color, time) {
 $(window).load(function () {
     flash('#1c0920', 1500);
 });
+
+function contacto() {
+    $('#overlay').stop().css({
+        'visibility': 'visible',
+        'opacity': '0.5',
+        'background-color': 'black',
+        'transition': 'all 0s',
+        'z-index': '9'
+    }).attr("onclick", "cerrarContacto()");
+    
+    $("#popContacto").css("visibility", "visible").animate({"height":"250px"}, 500).animate({"width":"400px"}, 500);
+    setTimeout(function() {
+        $("#tablaContacto").animate({"opacity": "1"}, 200);
+    }, 1000);
+}
+
+function cerrarContacto() {
+    $("#tablaContacto").animate({"opacity": "0"}, 200);
+    setTimeout(function() {
+        $("#popContacto").animate({"width": "30px"}, 300).animate({"height": "0px"}, 300);
+    }, 200);
+    setTimeout(function() {
+        $("#popContacto").css("visibility","hidden");
+        $('#overlay').stop().css('visibility', 'hidden').attr("onclick", "");
+    }, 800);
+}

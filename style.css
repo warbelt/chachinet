@@ -14,6 +14,12 @@ p, img, div, li {
     -o-user-select: none;
     user-select: none;
 }
+
+a {
+    text-decoration: none;
+    outline: 0;
+}
+
 /**************** Imagen de fondo ****************/ 
 body {
     background-size: 100%;
@@ -73,7 +79,7 @@ body.noche {
 /**************************************************/
 /******************* Overlay **********************/
 #overlay {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   height: 100%;
@@ -153,6 +159,7 @@ ul li {
     float: left;
     padding: 10px 0px;
     width:110px;
+    cursor: pointer;
 }
     ul li:hover {
         background: grey;
@@ -189,4 +196,42 @@ li.flechaNav {
 li#nombreNav:hover {
     background: black;
     color: #ee8800;
+}
+
+#popContacto {
+    position: relative;
+    display: block;
+    width: 30px;
+    height: 0px;
+    opacity: 0.8;
+    z-index: 10;
+    background: black;
+    margin: 100px auto;
+    border: 3px double #808080;
+    visibility: hidden;
+}
+
+#tablaContacto {
+    opacity: 0;
+}
+
+#tablaContacto th, #tablaContacto td {
+    height: 125px;
+    width: 100px;
+    vertical-align: middle;
+    text-align: center;
+    padding: 5px;
+}
+
+#tablaContacto p {
+    font-size: 12px;
+    color: white;
+}
+
+#tablaContacto td {
+    opacity: 0.6;
+}
+
+#tablaContacto td:hover {
+    opacity: 1;
 }
