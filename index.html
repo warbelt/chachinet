@@ -1,6 +1,6 @@
 <!--     Mario A. Durantez     -->
 <!--   mdurantezs@gmail.com    -->
-<!--  www.chachinet.tk - v1.5.3  -->
+<!--  www.chachinet.tk - v1.6  -->
 
 <html lang="spanish">
 <head>
@@ -60,7 +60,7 @@
                     <li onclick="desactivaNieve()">No</li>
                 </ul>
             </li>
-            <li id="liFondo" onclick="rotarFondo()">Solecillo</li>
+            <li id="liFondo" onclick="bgManager()">Fondos</li>
             <li id="mocos" style="visibility: hidden; width: 250px" onclick="for (i=0;i<=snowmax;i++) {document.getElementById('s'+i).innerHTML='moco'}">Haz que nieven mocos!</li>
         </ul> 
         <ul id=navegar>
@@ -84,7 +84,7 @@
     <img id='preload' src='imgs/_bg2.jpg' style='height:0px; width: 1px; top:-999px; z-index:-9'>
     <img id='preload2' src='imgs/_bg3.jpg' style='height:0px; width: 1px; top:-998px; z-index:-9'>
     
-    <div id='popContacto'>
+    <div id='popContacto' class="popUp">
         <table id='tablaContacto'><tr>
             <th><img src='media/favicon_white.ico'></th>
             <th><p>Chachinet son:</p></th>
@@ -93,9 +93,12 @@
             <td><a href='mailto:mdurantezs@gmail.com'><img src='media/mailicon.png'><p>mdurantezs<br>@gmail.com</p></td>
             <td><a target='_blank' href='http://www.github.com/warbelt/chachinet'><img src='media/GHicon.png'><br><p>GitHub</p></a></td>
             <td><a target='_blank' href='http://www.jquery.com'><img src='media/JQicon.png'><p>Powered by<br>jQuery</p></a></td>
-            <td><a target='blank' href='http://www.visualpharm.com'><p>Algunos iconos cedidos por VisualPharm</p></a></td></tr>
+            <td><a target='_blank' href='http://www.visualpharm.com'><p>Algunos iconos cedidos por VisualPharm</p></a>
+                <a target='_blank' href='https://plus.google.com/communities/104613975513761463450'><p>Fondos por elementaryOS community</p></a></td></tr>
         </table>
     </div>
     
+    <div id="popFondos" class="popUp">
+    </div>
 </body>
 </html>

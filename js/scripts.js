@@ -8,7 +8,7 @@
 /**********************************************************/
 //  Parametros de configuracion de la página
 
-var jsonfile = "items.json";     
+var jsonfileSongs = "items.json";     
 // Fichero json de origen
 // Estructura: {visible, 
 //              songs[{name, 
@@ -17,6 +17,8 @@ var jsonfile = "items.json";
 //                     img, 
 //                     color
 //              }]}
+
+var jsonfileBGs = "bgs.json";
 
 var canciones;  //Numero total de canciones incluidas en el json
 var pagina = 0; //Set de elementos a cargar. Cada página tiene 9 elementos
@@ -33,7 +35,7 @@ var w_width = $(document).width();
 // Carga inicial desde JSON
 
 $(document).ready(function() {
-    var loaded = loadSpheres(0, 9, jsonfile);
+    var loaded = loadSpheres(0, 9, jsonfileSongs);
     setSpheres(loaded);
     layout0(false);
 });
@@ -55,7 +57,7 @@ function siguiente() {
 
 function cargaPagina() {
     var inicio = pagina*9;
-    var cargadas = loadSpheres(inicio, 9, jsonfile);
+    var cargadas = loadSpheres(inicio, 9, jsonfileSongs);
     
     if (cargadas==(0)){
         pagina-=1;
