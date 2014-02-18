@@ -4,126 +4,126 @@
         {
             "name": "Elephant Gun",
             "artist": "Beirut",
-            "img": "imgs/elephant.jpg",
+            "img": "imgs/songs/elephant.jpg",
             "src": "PermEZ18IXg",
             "color": "darkred"
         },
         {
             "name": "Exile, Vilify",
             "artist": "The National",
-            "img": "imgs/exile.jpg",
+            "img": "imgs/songs/exile.jpg",
             "src": "G-Vg2YS-sFE",
             "color": "plum"
         },
         {
             "name": "Bad",
             "artirt": "U2",
-            "img": "imgs/boy.jpg",
+            "img": "imgs/songs/boy.jpg",
             "src": "XzrqXsWugx0",
             "color": "#1e1e1e"
         },
         {
             "name": "Wild World",
             "artirt": "Cat Stevens",
-            "img": "imgs/wild.jpg",
+            "img": "imgs/songs/wild.jpg",
             "src": "y8pvXLVu8Yk",
             "color": "white"
         },
         {
             "name": "You and I",
             "artirt": "Wilco",
-            "img": "imgs/wilco.jpg",
+            "img": "imgs/songs/wilco.jpg",
             "src": "USjuOWLyWIQ",
             "color": "orange"
         },
         {
             "name": "Car Song",
             "artirt": "Woodie Guthrie",
-            "img": "imgs/car.jpg",
+            "img": "imgs/songs/car.jpg",
             "src": "85GUbsrt0ew",
             "color": "orange"
         },
         {
             "name": "Song of Los",
             "artirt": "Apparat",
-            "img": "imgs/los.jpg",
+            "img": "imgs/songs/los.jpg",
             "src": "kDyk8ouEfSQ",
             "color": "#482a5a"
         },
         {
             "name": "Hey",
             "artirt": "Pixies",
-            "img": "imgs/hey.jpg",
+            "img": "imgs/songs/hey.jpg",
             "src": "v6xU96KLBL4",
             "color": "#932f1d"
         },
         {
             "name": "Afterlife",
             "artirt": "Arcade Fire",
-            "img": "imgs/after.jpg",
+            "img": "imgs/songs/after.jpg",
             "src": "r75BFcH4u2k",
             "color": "white"
         },
         {
             "name": "I Need my Girl",
             "artirt": "The National",
-            "img": "imgs/girl.jpg",
+            "img": "imgs/songs/girl.jpg",
             "src": "2_79sx6V3tU",
             "color": "black"
         },
         {
             "name": "Ma Fleur",
             "artirt": "The Cinematic Orchestra",
-            "img": "imgs/fleur.jpg",
+            "img": "imgs/songs/fleur.jpg",
             "src": "mmlhCC2VAXo",
             "color": "#a67800"
         },
         {
             "name": "Holocene",
             "artirt": "Bon Iver",
-            "img": "imgs/emma.jpg",
+            "img": "imgs/songs/emma.jpg",
             "src": "MjxA25Tj1Ks",
             "color": "black"
         },
         {
             "name": "Funeral",
             "artirt": "Band of Horses",
-            "img": "imgs/funeral.jpg",
+            "img": "imgs/songs/funeral.jpg",
             "src": "cMFWFhTFohk",
             "color": "yellow"
         },
         {
             "name": "El Rey",
             "artirt": "Coque Malla",
-            "img": "imgs/rey.jpg",
+            "img": "imgs/songs/rey.jpg",
             "src": "8Dv7LUImBsg",
             "color": "darkred"
         },
         {
             "name": "Ocean of Noise",
             "artirt": "Arcade Fire",
-            "img": "imgs/neon.jpg",
+            "img": "imgs/songs/neon.jpg",
             "src": "CyN9_5LUSZY",
             "color": "darkred"
         },
         {
             "name": "Hurt",
             "artirt": "Johnny Cash",
-            "img": "imgs/hurt.jpg",
+            "img": "imgs/songs/hurt.jpg",
             "src": "3aF9AJm0RFc",
             "color": "#1e1e1e"
         },
         {
             "name": "Little Motel",
             "artirt": "Modest Mouse",
-            "img": "imgs/motel.jpg",
+            "img": "imgs/songs/motel.jpg",
             "src": "zqQTODR3kR8",
             "color": "#db5604"
         },
         {
             "name": "Have You Ever Seen the Rain",
             "artirt": "Creedence clearwater Revival",
-            "img": "imgs/rain.jpg",
+            "img": "imgs/songs/rain.jpg",
             "src": "Gu2pVPWGYMQ",
             "color": "#c33ba8"
         }

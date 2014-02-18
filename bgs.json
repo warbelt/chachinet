@@ -3,42 +3,42 @@
     "bgs": [
         {
             "name": "Lluvia por anonimo",
-            "url": "bgs/lluvia",
+            "url": "imgs/bgs/lluvia",
             "color": "#1c0920"
         },
         {
             "name": "Delight por Solutionall",
-            "url": "bgs/delight",
+            "url": "imgs/bgs/delight",
             "color": "darkred"
         },
         {
             "name": "Solecillo por anonimo",
-            "url": "bgs/solecillo",
+            "url": "imgs/bgs/solecillo",
             "color": "#1d7471"
         },
         {
             "name": "86.III por bo0xVn",
-            "url": "bgs/86.III",
+            "url": "imgs/bgs/86.III",
             "color": "grey"
         },
         {
             "name": "Boats por anonimo",
-            "url": "bgs/boats",
+            "url": "imgs/bgs/boats",
             "color": "orange"
         },
         {
             "name": "Colorful City por xhoOp",
-            "url": "bgs/colorfulcity",
+            "url": "imgs/bgs/colorfulcity",
             "color": "#f8f8e0"
         },
         {
             "name": "Noche por anonimo",
-            "url": "bgs/noche",
+            "url": "imgs/bgs/noche",
             "color": "#a76c1d"
         },
         {
             "name": "Dark Rain por Momez",
-            "url": "bgs/darkrain",
+            "url": "imgs/bgs/darkrain",
             "color": "#1c0920"
         }
     ]

@@ -6,32 +6,6 @@
 
 /**********************************************************/
 /**********************************************************/
-// Rotación entre los fondos
-
-function rotarFondo(){
-    if ($("#liFondo").text()=="Solecillo") {
-        $("#liFondo").text("Noche");
-        flash('#1d7471', 1000);
-        $("body").toggleClass("lluvia");
-        $("body").toggleClass("sol");
-    }
-    else if ($("#liFondo").text()=="Noche") {
-        $("#liFondo").text("Lluvia");
-        flash('#a76c1d', 1000);
-        $("body").toggleClass("sol");
-        $("body").toggleClass("noche");
-    }
-    else if ($("#liFondo").text()=="Lluvia") {
-        $("#liFondo").text("Solecillo");
-        flash('#1c0920', 1000);
-        $("body").toggleClass("noche");
-        $("body").toggleClass("lluvia");
-    }
-    
-}
-
-/**********************************************************/
-/**********************************************************/
 // Efecto de fundido al entrar y cambiar de estación
 
 function flash(color, time) {

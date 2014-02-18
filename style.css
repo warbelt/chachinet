@@ -24,15 +24,7 @@ a {
 body {
     background-size: 100%;
     overflow: hidden;
-}
-body.lluvia {
-     background-image:url(imgs/_bg1.jpg);
-}
-body.sol {
-     background-image:url(imgs/_bg2.jpg);
-}
-body.noche {
-     background-image:url(imgs/_bg3.jpg);
+    background-image:url(imgs/bgs/lluvia.jpg);
 }
 /**************************************************/
 /************ Contenedor de youtube ***************/
