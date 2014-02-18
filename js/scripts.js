@@ -112,7 +112,7 @@ function setSpheres(cargadas) {
 
 function unlock() {
     $("#dragLock > img").attr("src", "media/unlocked20x20.png");
-    $("#dragLock").attr("onclick", "lock()").addClass("on");
+    $("#dragLock").attr("onclick", "lock()").addClass("on").attr("title", "Anclar imagenes");
     
     $(".sng").each(function() {
         $(this).attr("onclick", "").addClass("unlocked").draggable({disabled: false}).draggable({containment: "document"});
@@ -125,7 +125,7 @@ function unlock() {
 
 function lock() {
     $("#dragLock > img").attr("src", "media/locked20x20.png");
-    $("#dragLock").attr("onclick", "unlock()").removeClass("on");
+    $("#dragLock").attr("onclick", "unlock()").removeClass("on").attr("title", "Desanclar imagenes");
     
     $(".sng").each(function() {
         $(this).attr("onclick", "if ( $(this).hasClass('activo') != 1 ) { activarVideo($(this).attr('data-videoID'), $(this).attr('id')) }").removeClass("unlocked").draggable({ disabled: true });
