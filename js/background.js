@@ -8,6 +8,8 @@
 /**********************************************************/
 // Efecto de fundido al entrar y cambiar de estación
 
+var layoutHidden;
+
 function flash(color, time) {
     $('#overlay').css({
         'visibility': 'visible',
@@ -16,7 +18,7 @@ function flash(color, time) {
         'transition': 'opacity '+time/1000+'s ease-in-out'
     });
 
-    setTimeout(function(){
+    layoutHidden = setTimeout(function(){
         $('#overlay').css({
             'visibility': 'hidden',
             'opacity': '1.0'
@@ -28,6 +30,8 @@ $(window).load(function () {
 });
 
 function contacto() {
+    clearTimeout(layoutHidden);
+    
     $('#overlay').stop().css({
         'visibility': 'visible',
         'opacity': '0.5',
@@ -54,6 +58,8 @@ function cerrarContacto() {
 }
 
 function bgManager() {
+    clearTimeout(layoutHidden);
+    
     $('#overlay').stop().css({
         'visibility': 'visible',
         'opacity': '0.5',
