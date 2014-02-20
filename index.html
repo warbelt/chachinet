@@ -45,60 +45,55 @@
 </head>
 
 <body>
-    <div id="overlay"></div>
+<div id="overlay"></div>
 
-    <div id="header">
-        <ul>
-            <li>Vistas
-                <ul id="vistas">
-                    <!-- carga lista desde jayouts.js -->
-                </ul>
-            </li>
-            <li>Nieve
-                <ul>
-                    <li onclick="activaNieve()">Si</li>
-                    <li onclick="desactivaNieve()">No</li>
-                </ul>
-            </li>
-            <li id="liFondo" onclick="bgManager()">Fondos</li>
-            <li id="mocos" style="visibility: hidden; width: 250px" onclick="for (i=0;i<=snowmax;i++) {document.getElementById('s'+i).innerHTML='moco'}">Haz que nieven mocos!</li>
-        </ul> 
-        <ul id=navegar>
-            <li class="flechaNav" onclick="anterior()">&lt;</li>
-            <li id="nombreNav">Canciones</li>
-            <li class="flechaNav" onclick="siguiente()">&gt;</li>
-        </ul>
-    </div>
+<div id="header">
+    <ul>
+        <li>Vistas
+            <ul id="vistas"><!-- carga lista desde jayouts.js -->
+            </ul>
+        </li>
+        <li>Nieve
+            <ul>
+                <li onclick="activaNieve()">Si</li>
+                <li onclick="desactivaNieve()">No</li>
+            </ul>
+        </li>
+        <li id="liFondo" onclick="bgManager()">Fondos</li>
+        <li id="mocos" style="visibility: hidden; width: 250px" onclick="for (i=0;i<=snowmax;i++) {$('#s'+i).html('moco')}">Haz que nieven mocos!</li>
+    </ul> 
+    <ul id=navegar>
+        <li class="flechaNav" onclick="anterior()">&lt;</li>
+        <li id="nombreNav">Canciones</li>
+        <li class="flechaNav" onclick="siguiente()">&gt;</li>
+    </ul>
+</div>
 
-    <div id="ytbcnt">
-        <div id="ytbfrm" width="420" height="315"><img src="imgs/media/up.jpg"></img></div>
-    </div>
+<div id="ytbcnt">
+    <div id="ytbfrm" width="420" height="315"><img src="imgs/media/up.jpg"></img></div>
+</div>
 
-    <div id="footer">
-        <div class="mediaButton" title="Acerca de..." id="contacto" onclick="contacto()" style="float:left"><img src="imgs/media/about20x20.png"></div>
-        <div class="mediaButton" title="Repetir" id="repetir" onclick="repetir()"><img src="imgs/media/repetir20x20.png"></div>
-        <div class="mediaButton" title="Aleatorio" id="aleatorio" onclick="aleatorio()"><img src="imgs/media/aleatorio20x20.png"></div>
-        <div class="mediaButton" title="Desanclar imagenes" id="dragLock" onclick="unlock()"><img src="imgs/media/locked20x20.png"></div>
-    </div>
-    
-    <img id='preload' src='imgs/_bg2.jpg' style='height:0px; width: 1px; top:-999px; z-index:-9'>
-    <img id='preload2' src='imgs/_bg3.jpg' style='height:0px; width: 1px; top:-998px; z-index:-9'>
-    
-    <div id='popContacto' class="popUp">
-        <table id='tablaContacto'><tr>
-            <th><img src='imgs/media/favicon_white.ico'></th>
-            <th><p>Chachinet son:</p></th>
-            <th colspan='2'><p>Carmen Domínguez<br> <br>Mario Durántez</p></th>
-        </tr><tr>
-            <td><a href='mailto:mdurantezs@gmail.com'><img src='imgs/media/mailicon.png'><p>mdurantezs<br>@gmail.com</p></td>
-            <td><a target='_blank' href='http://www.github.com/warbelt/chachinet'><img src='imgs/media/GHicon.png'><br><p>GitHub</p></a></td>
-            <td><a target='_blank' href='http://www.jquery.com'><img src='imgs/media/JQicon.png'><p>Powered by<br>jQuery</p></a></td>
-            <td><a target='_blank' href='http://www.visualpharm.com'><p>Algunos iconos cedidos por VisualPharm</p></a>
-                <a target='_blank' href='https://plus.google.com/communities/104613975513761463450'><p>Fondos por elementaryOS community</p></a></td></tr>
-        </table>
-    </div>
-    
-    <div id="popFondos" class="popUp">
-    </div>
+<div id="footer">
+    <div class="mediaButton" title="Acerca de..." id="contacto" onclick="contacto()" style="float:left"><img src="imgs/media/about20x20.png"></div>
+    <div class="mediaButton" title="Repetir" id="repetir" onclick="repetir()"><img src="imgs/media/repetir20x20.png"></div>
+    <div class="mediaButton" title="Aleatorio" id="aleatorio" onclick="aleatorio()"><img src="imgs/media/aleatorio20x20.png"></div>
+    <div class="mediaButton" title="Desanclar imagenes" id="dragLock" onclick="unlock()"><img src="imgs/media/locked20x20.png"></div>
+</div>
+
+<div id='popContacto' class="popUp">
+    <table id='tablaContacto'><tr>
+        <th><img src='imgs/media/favicon_white.ico'></th>
+        <th><p>Chachinet son:</p></th>
+        <th colspan='2'><p>Carmen Domínguez<br> <br>Mario Durántez</p></th>
+    </tr><tr>
+        <td><a href='mailto:mdurantezs@gmail.com'><img src='imgs/media/mailicon.png'><p>mdurantezs<br>@gmail.com</p></td>
+        <td><a target='_blank' href='http://www.github.com/warbelt/chachinet'><img src='imgs/media/GHicon.png'><br><p>GitHub</p></a></td>
+        <td><a target='_blank' href='http://www.jquery.com'><img src='imgs/media/JQicon.png'><p>Powered by<br>jQuery</p></a></td>
+        <td><a target='_blank' href='http://www.visualpharm.com'><p>Algunos iconos cedidos por VisualPharm</p></a>
+            <a target='_blank' href='http://plus.google.com/communities/104613975513761463450'><p>Fondos por elementaryOS community</p></a></td></tr>
+    </table>
+</div>
+
+<div id="popFondos" class="popUp"></div>
 </body>
 </html>
