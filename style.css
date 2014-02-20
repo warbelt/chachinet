@@ -34,6 +34,7 @@ body {
     left:12%;
     margin-top:-150px;
     background-color: #1c0920;
+    z-index: 10;
 }
 #ytbfrm {
     border: 2px inset #444;
@@ -48,6 +49,7 @@ body {
     margin: 10px;
     box-shadow: 3px 3px 3px #888;
     transition: opacity 0.4s linear;
+    z-index: 20;
 }
     .sng:hover, .sng.activo, .sng.unlocked {
         opacity:1;
@@ -87,7 +89,7 @@ body {
     background-color: black;
     opacity: 0.6;
     position: absolute;
-    z-index: 5;
+    z-index: 30;
     top: -25px;
     left: 0px;
     width: 100%;
@@ -110,7 +112,7 @@ p.headelement {
     background-color: black;
     opacity:0.6;
     position: fixed;
-    z-index:5;
+    z-index:30;
     bottom: 0; 
     left:0px;
     height:24px;
@@ -197,7 +199,7 @@ li#nombreNav:hover {
     width: 30px;
     height: 0px;
     opacity: 0.8;
-    z-index: 10;
+    z-index: 50;
     background: black;
     margin: 100px auto;
     border: 3px double #808080;
@@ -237,5 +239,5 @@ table td {
     width: 150px;
     vertical-align: middle;
     text-align: center;
-    padding: 5px;
+    cursor: pointer;
 }

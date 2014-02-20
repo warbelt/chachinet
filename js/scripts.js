@@ -113,13 +113,12 @@ function setSpheres(cargadas) {
 }
 
 function unlock() {
-    $("#dragLock > img").attr("src", "media/unlocked20x20.png");
+    $("#dragLock > img").attr("src", "imgs/media/unlocked20x20.png");
     $("#dragLock").attr("onclick", "lock()").addClass("on").attr("title", "Anclar imagenes");
     
     $(".sng").each(function() {
         $(this).attr("onclick", "").addClass("unlocked").draggable({disabled: false}).draggable({containment: "document"});
-        $("#ytbplayer").draggable({disabled: false}).draggable({containment: "document"});
-        $("#ytbcnt").draggable({disabled: false}).css("z-index", "-1");
+        $("#ytbcnt").draggable({disabled: false});
     });
     
     itemsUnlocked = true;
@@ -131,8 +130,7 @@ function lock() {
     
     $(".sng").each(function() {
         $(this).attr("onclick", "if ( $(this).hasClass('activo') != 1 ) { activarVideo($(this).attr('data-videoID'), $(this).attr('id')) }").removeClass("unlocked").draggable({ disabled: true });
-        $("#ytbplayer").draggable({ disabled: true });
-        $("#ytbcnt").draggable({ disabled: true }).css("z-index", "auto");
+        $("#ytbcnt").draggable({ disabled: true });
     });
     
     itemsUnlocked = false;

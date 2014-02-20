@@ -33,7 +33,7 @@ function contacto() {
         'opacity': '0.5',
         'background-color': 'black',
         'transition': 'all 0s',
-        'z-index': '9'
+        'z-index': '40'
     }).attr("onclick", "cerrarContacto()");
     
     $("#popContacto").css("visibility", "visible").animate({"height":"250px"}, 500).animate({"width":"400px"}, 500);
@@ -59,7 +59,7 @@ function bgManager() {
         'opacity': '0.5',
         'background-color': 'black',
         'transition': 'all 0s',
-        'z-index': '9'
+        'z-index': '40'
     }).attr("onclick", "cerrarbgManager()");
     
     $("#popFondos").css("visibility", "visible").animate({"height":"308px"}, 500).animate({"width":"600px"}, 500);

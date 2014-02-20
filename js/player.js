@@ -9,7 +9,7 @@
 // Controles de reproducción de videos
 
 function activarYtb(videoID) {
-    var params = { allowScriptAccess: "always" };
+    var params = { allowScriptAccess: "always", wmode: "opaque" };
     var atts = { id: "ytbplayer" };
     swfobject.embedSWF("http://www.youtube.com/v/"+videoID+"?enablejsapi=1&playerapiid=ytbplayer&autoplay=1&rel=0", "ytbfrm", "420", "315", "8", null, null, params, atts);
 }
