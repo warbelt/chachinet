@@ -230,6 +230,7 @@ table td {
 
 #popFondos {
     top: -150px;
+    overflow-y: scroll;
 }
 #tablafondos {
     opacity: 0;

@@ -62,7 +62,7 @@ function bgManager() {
         'z-index': '40'
     }).attr("onclick", "cerrarbgManager()");
     
-    $("#popFondos").css("visibility", "visible").animate({"height":"308px"}, 500).animate({"width":"600px"}, 500);
+    $("#popFondos").css("visibility", "visible").animate({"height":"308px"}, 500).animate({"width":"608px"}, 500);
     setTimeout(function() {
         cargarFondos(jsonfileBGs);
     }, 1000);
