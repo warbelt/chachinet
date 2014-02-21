@@ -34,7 +34,7 @@ function contacto() {
     
     $('#overlay').stop().css({
         'visibility': 'visible',
-        'opacity': '0.5',
+        'opacity': '0.7',
         'background-color': 'black',
         'transition': 'all 0s',
         'z-index': '40'
@@ -62,7 +62,7 @@ function bgManager() {
     
     $('#overlay').stop().css({
         'visibility': 'visible',
-        'opacity': '0.5',
+        'opacity': '0.7',
         'background-color': 'black',
         'transition': 'all 0s',
         'z-index': '40'

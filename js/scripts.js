@@ -88,7 +88,7 @@ function loadSpheres(start, quantity, url) {
             }
 
             for (var i = start;  (i < canciones) && (cargadas < 9) ; i++){
-                $("body").append("<div class='sng borde boton esfera oculto' id='temp_borde"+cargadas+"' data-videoID="+data.songs[i].src+"> <img class='boton esfera' id='temp_img"+cargadas+"' src='"+data.songs[i].img+"'> </div>");
+                $("body").append("<div class='sng borde boton esfera oculto' id='temp_borde"+cargadas+"' data-videoID="+data.songs[i].src+" data-songName='"+data.songs[i].name+"'> <img class='boton esfera' id='temp_img"+cargadas+"' src='"+data.songs[i].img+"'> </div>");
                 $("#temp_borde"+cargadas).css({"border-color": data.songs[i].color, "visibility": "hidden"})   //cambia color del borde
                 $("#temp_borde"+cargadas).attr('onclick', 'if ( $(this).hasClass("activo") != 1 ) { activarVideo($(this).attr("data-videoID"), $(this).attr("id")) }'); //añade cambio de video al clicar
                 if ($("#temp_borde"+cargadas).attr("data-videoID") == videoIdActivo) {
@@ -118,8 +118,8 @@ function unlock() {
     
     $(".sng").each(function() {
         $(this).attr("onclick", "").addClass("unlocked").draggable({disabled: false}).draggable({containment: "document"});
-        $("#ytbcnt").draggable({disabled: false});
     });
+    $("#ytbcnt").draggable({disabled: false});
     
     itemsUnlocked = true;
 }
@@ -130,8 +130,12 @@ function lock() {
     
     $(".sng").each(function() {
         $(this).attr("onclick", "if ( $(this).hasClass('activo') != 1 ) { activarVideo($(this).attr('data-videoID'), $(this).attr('id')) }").removeClass("unlocked").draggable({ disabled: true });
-        $("#ytbcnt").draggable({ disabled: true });
     });
+    $("#ytbcnt").draggable({ disabled: true });
     
     itemsUnlocked = false;
+}
+
+function randomNumber (top) {
+  return Math.floor(top * Math.random());
 }

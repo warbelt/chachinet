@@ -48,7 +48,7 @@ function playRandom() {
     //elige una cancion al azar que no este activa ni en la lista de recientes
     var aleatorio; 
     do {
-        aleatorio = Math.floor(Math.random() * canciones);
+        aleatorio = randomNumber(canciones);
     } while ($("#borde"+aleatorio).hasClass("activo") || (randomQueue.indexOf(aleatorio) != -1));
     
     randomQueue.push(aleatorio);
