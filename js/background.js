@@ -103,8 +103,9 @@ function cambiaFondo(urlImagen, color) {
     setTimeout(function() {
         $("body").css("background-image", "url('"+urlImagen+".jpg')");
         flash(color, 300);
+        saveBackground();
     }, 1000);
-    
+
 }
 
 function cerrarbgManager() {

@@ -37,7 +37,7 @@ var w_width = $(document).width();
 $(document).ready(function() {
     var loaded = loadSpheres(0, 9, jsonfileSongs);
     setSpheres(loaded);
-    layout0(false);
+    unwrapCookies();
 });
 
 /**********************************************************/
@@ -134,8 +134,9 @@ function lock() {
     $("#ytbcnt").draggable({ disabled: true });
     
     itemsUnlocked = false;
+    savePositions();
 }
 
 function randomNumber (top) {
-  return Math.floor(top * Math.random());
+    return Math.floor(top * Math.random());
 }

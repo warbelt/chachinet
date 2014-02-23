@@ -67,7 +67,6 @@ function guardaPosiciones () {
     var posiciones = [];
     
     $(".sng").each(function () {
-        console.log("s");
         posiciones.push([$(this).css("top"), $(this).css("left")]);
     });
     
