@@ -59,8 +59,8 @@ function unwrapCookies()
     }
     else {
         $("#ytbcnt").css({"top": positions[0], "left": positions[1]});
-        positions.unshift(); 
-        positions.unshift();
+        positions.shift(); 
+        positions.shift();
         
         positioned = 0;
         $(".sng").each(function() {
