@@ -1,5 +1,5 @@
 {
-    "visible": 18,
+    "visible": 20,
     "songs": [
         {
             "name": "Elephant Gun",
@@ -126,6 +126,20 @@
             "img": "imgs/songs/rain.jpg",
             "src": "Gu2pVPWGYMQ",
             "color": "#c33ba8"
+        },
+        {
+            "name": "Unsung",
+            "artirt": "+/-",
+            "img": "imgs/songs/unsung.jpg",
+            "src": "-u8qiUB-RiQ",
+            "color": "burlywood"
+        },
+        {
+            "name": "How to Fight Loneliness",
+            "artirt": "Wilco",
+            "img": "imgs/songs/summerteeth.jpg",
+            "src": "7CAYFIpi89k",
+            "color": "#4896b9"
         }
     ]
 }

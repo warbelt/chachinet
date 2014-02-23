@@ -33,10 +33,16 @@
     <link rel="stylesheet" href="style.css"> 
     <link rel="icon" href="media/favicon.ico">           
         <!-- Scripts (javaScript & jQuery) -->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>     <!-- jQuery -->
-    <script src="js/jquery-ui-1.10.4.custom.min.js"></script>                   <!-- jQuery UI (draggable) -->
-    <script src="js/swfobject.js"></script>         <!-- flash -->
-    <script src="js/nieve.js"></script>             <!-- (scriptmania.com) -->
+        <!--[if lt IE 9]>
+    <script src='//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js' type='text/javascript'/></script>
+        <![endif]-->
+        <!--[if (gte IE 9) | (!IE)]><!-->  
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js' type='text/javascript'/></script>  <!-- jQuery -->
+        <!--<![endif]--> 
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>   <!-- jQuery UI -->
+    <script src="http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>         <!-- flash -->
+    <script src="js/nieve.js"></script>                                                             <!-- (scriptmania.com) -->
 
     <script src="js/scripts.js"></script>
     <script src="js/layout.js"></script>
